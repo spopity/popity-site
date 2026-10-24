@@ -1,0 +1,14 @@
+# Secrets and server-side files that must never be committed
+popity-smtp.php
+*.log
+.env*
+
+# Build/upload leftovers
+*.zip
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

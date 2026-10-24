@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://popity.ro/sitemap.xml
