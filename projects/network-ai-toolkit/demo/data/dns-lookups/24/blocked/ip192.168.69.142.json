@@ -1,0 +1,1 @@
+{"available":true,"hours":24,"lookups":[{"blocked":2,"count":2,"device":"laptop-4.lan","device_key":"ip:192.168.69.142","domain":"api.mixpanel.com","first_ever":"2026-11-15T07:39:08.459632+00:00","first_seen":"2026-11-15T09:14:24.623196+00:00","last_seen":"2026-11-15T09:14:24.623327+00:00","network":"LAN","new":false,"rule":"||api.mixpanel.com^"}]}

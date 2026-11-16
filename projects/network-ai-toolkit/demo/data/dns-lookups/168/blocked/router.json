@@ -1,0 +1,1 @@
+{"available":true,"hours":168,"lookups":[{"blocked":2,"count":2,"device":"Router (itself)","device_key":"router","domain":"doubleclick.net","first_ever":"2026-11-12T20:40:08.186342+00:00","first_seen":"2026-11-12T20:40:08.186342+00:00","last_seen":"2026-11-12T20:40:08.186370+00:00","network":"Router","new":false,"rule":"||doubleclick.net^"}]}

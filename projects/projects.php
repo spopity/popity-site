@@ -45,7 +45,7 @@ return [
         'stack'       => ['Python', 'Flask', 'Paramiko (SSH)', 'Gemini + local Ollama', 'PostgreSQL', 'React + TypeScript', 'systemd'],
         'status'      => 'in daily use at home, watching every packet',
         'link'        => 'https://github.com/spopity/network-ai-toolkit',
-        'demo'        => ['url' => 'demo/', 'date' => '2026-10-21', 'note' => 'Tshoot replays real investigations, with addresses and device names masked'],
+        'demo'        => ['url' => 'demo/', 'date' => '2026-11-16', 'note' => 'Tshoot replays real investigations, with addresses and device names masked'],
     ],
     [
         'name'        => 'ai-endurance-coach',
@@ -60,6 +60,6 @@ return [
         'stack'       => ['Python', 'LangGraph', 'Gemini + local Ollama', 'PostgreSQL', 'React'],
         'status'      => 'running 24/7, judging every ride',
         'link'        => 'https://github.com/spopity/ai-endurance-coach',
-        'demo'        => ['url' => 'demo/', 'date' => '2026-10-25', 'note' => 'the chat replays answers the coach really gave'],
+        'demo'        => ['url' => 'demo/', 'date' => '2026-11-16', 'note' => 'the chat replays answers the coach really gave'],
     ],
 ];

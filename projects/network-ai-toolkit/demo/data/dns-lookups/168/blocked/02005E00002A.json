@@ -1,0 +1,1 @@
+{"available":true,"hours":168,"lookups":[{"blocked":1,"count":1,"device":"Phone 3","device_key":"02:00:5E:00:00:2A","domain":"app-analytics-services.com","first_ever":"2026-11-15T18:01:36.676178+00:00","first_seen":"2026-11-15T18:01:36.676178+00:00","last_seen":"2026-11-15T18:01:36.676178+00:00","network":"IoT","new":false,"rule":"||app-analytics-services.com^"}]}

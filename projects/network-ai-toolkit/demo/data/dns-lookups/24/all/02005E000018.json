@@ -1,0 +1,1 @@
+{"available":true,"hours":24,"lookups":[{"blocked":0,"count":35,"device":"Heater 1","device_key":"02:00:5E:00:00:18","domain":"zeroseriesupdate.viessmann-platform.io","first_ever":"2026-11-12T21:14:51.537643+00:00","first_seen":"2026-11-15T09:08:03.383702+00:00","last_seen":"2026-11-16T08:47:36.605036+00:00","network":"IoT","new":false,"rule":null}]}

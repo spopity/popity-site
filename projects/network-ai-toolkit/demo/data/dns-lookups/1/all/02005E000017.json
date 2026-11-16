@@ -1,0 +1,1 @@
+{"available":true,"hours":1,"lookups":[{"blocked":0,"count":3,"device":"Smart plug","device_key":"02:00:5E:00:00:17","domain":"time.cloudflare.com","first_ever":"2026-11-12T20:43:51.374054+00:00","first_seen":"2026-11-16T08:15:25.754547+00:00","last_seen":"2026-11-16T09:10:54.594664+00:00","network":"IoT","new":false,"rule":null}]}

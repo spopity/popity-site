@@ -1,0 +1,1 @@
+{"available":true,"hours":168,"lookups":[{"blocked":0,"count":1,"device":"Heater 1","device_key":"02:00:5E:00:00:18","domain":"production-6-7-rmq-broker.devices.viessmann-platform.io","first_ever":"2026-11-14T21:33:57.278542+00:00","first_seen":"2026-11-14T21:33:57.278542+00:00","last_seen":"2026-11-14T21:33:57.278542+00:00","network":"IoT","new":true,"rule":null}]}

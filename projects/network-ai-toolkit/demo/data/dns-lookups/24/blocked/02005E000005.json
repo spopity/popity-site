@@ -1,0 +1,1 @@
+{"available":true,"hours":24,"lookups":[{"blocked":6,"count":6,"device":"Smart display","device_key":"02:00:5E:00:00:05","domain":"static.doubleclick.net","first_ever":"2026-11-13T01:19:35.914440+00:00","first_seen":"2026-11-16T01:28:05.429939+00:00","last_seen":"2026-11-16T01:28:05.430891+00:00","network":"LAN","new":false,"rule":"||static.doubleclick.net^"}]}

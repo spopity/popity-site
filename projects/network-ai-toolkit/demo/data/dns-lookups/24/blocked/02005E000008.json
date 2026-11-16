@@ -1,0 +1,1 @@
+{"available":true,"hours":24,"lookups":[{"blocked":1,"count":1,"device":"Speaker 2","device_key":"02:00:5E:00:00:08","domain":"www.google-analytics.com","first_ever":"2026-11-13T02:15:48.555130+00:00","first_seen":"2026-11-16T01:43:52.424494+00:00","last_seen":"2026-11-16T01:43:52.424494+00:00","network":"LAN","new":false,"rule":"||google-analytics.com^"}]}

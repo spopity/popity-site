@@ -123,11 +123,50 @@
       'On the real one, Tshoot runs the command only after this approval and then checks the result.' }], signal);
   }
 
+  // --- traffic and DNS drill-downs ---------------------------------------
+
+  // Ranges recorded for each card; anything else falls back to the closest one.
+  function closest(n, options) {
+    return options.reduce(function (a, b) { return Math.abs(b - n) < Math.abs(a - n) ? b : a; });
+  }
+
+  // Per-device files are named after the device key without colons (see build_net.py).
+  function fileKey(key) {
+    return key.replace(/:/g, '').replace(/\//g, '_');
+  }
+
+  function loadOr(file, fallback) {
+    return load(file).then(json, function () { return json(fallback); });
+  }
+
+  function trafficDetail(q) {
+    var hours = closest(+q.get('hours') || 24, [24, 168, 336]);
+    var device = q.get('device'), network = q.get('network');
+    var empty = { available: true, hours: hours, apps: [], series: [] };
+    if (device) return loadOr('traffic-detail/' + hours + '/device/' + fileKey(device) + '.json', empty);
+    if (network) return loadOr('traffic-detail/' + hours + '/network/' + fileKey(network) + '.json', empty);
+    return load('traffic-detail_hours_' + hours + '.json').then(json);
+  }
+
+  function dnsLookups(q) {
+    var hours = closest(+q.get('hours') || 24, [1, 24, 168]);
+    var filter = q.get('blocked') ? 'blocked' : q.get('new') ? 'new' : 'all';
+    return loadOr('dns-lookups/' + hours + '/' + filter + '/' + fileKey(q.get('device') || '') + '.json',
+      { available: true, hours: hours, lookups: [] });
+  }
+
+  // Nobody is signed in to a static page, so router changes can't be approved.
+  var WHOAMI = {
+    can_approve: false, device: 'demo', ip: null, login: null, name: 'Demo visitor', tagged: false, via_tailscale: false,
+    reason: 'Demo snapshot: there is no router behind this page, so changes cannot be approved.'
+  };
+
   // --- routes -----------------------------------------------------------
 
   function handle(url, init) {
     var method = ((init && init.method) || 'GET').toUpperCase();
     var path = url.pathname.replace(/^.*\/api\//, '');
+    var q = url.searchParams;
     var body = {};
     try { body = init && init.body ? JSON.parse(init.body) : {}; } catch (e) {}
 
@@ -135,7 +174,14 @@
       if (path === 'state') return load('state.json').then(json);
       if (path === 'history') return load('history_days_30.json').then(json);
       if (path === 'collect-status') return load('collect-status.json').then(json);
-      if (path === 'connmon') return loadConnmon(+url.searchParams.get('hours') > 24 ? 168 : 24);
+      if (path === 'connmon') return loadConnmon(closest(+q.get('hours') || 24, [1, 24, 168]));
+      if (path === 'network-map') return load('network-map.json').then(json);
+      if (path === 'reports') return load('reports_' + (q.get('period') === 'month' ? 'month' : 'week') + '.json').then(json);
+      if (path === 'traffic/devices') return load('traffic-devices_hours_' + closest(+q.get('hours') || 24, [24, 168, 336]) + '.json').then(json);
+      if (path === 'traffic/detail') return trafficDetail(q);
+      if (path === 'dns/devices') return load('dns-devices_hours_' + closest(+q.get('hours') || 24, [1, 24, 168]) + '.json').then(json);
+      if (path === 'dns/lookups') return dnsLookups(q);
+      if (path === 'whoami') return Promise.resolve(json(WHOAMI));
     } else {
       if (path === 'tshoot/chat') return tshootChat(body, init.signal);
       if (path === 'tshoot/approve') return Promise.resolve(tshootApprove(init.signal));
