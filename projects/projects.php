@@ -60,6 +60,6 @@ return [
         'stack'       => ['Python', 'LangGraph', 'Gemini + local Ollama', 'PostgreSQL', 'React'],
         'status'      => 'running 24/7, judging every ride',
         'link'        => 'https://github.com/spopity/ai-endurance-coach',
-        'demo'        => ['url' => 'demo/', 'date' => '2026-10-21', 'note' => 'the chat replays answers the coach really gave'],
+        'demo'        => ['url' => 'demo/', 'date' => '2026-10-25', 'note' => 'the chat replays answers the coach really gave'],
     ],
 ];
